@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>FitSync - Progress & Analysis</title>
+    <!-- Link to the updated high-fidelity CSS -->
+    <link rel='stylesheet' href='style.css'>
+    <!-- Font Awesome for icons -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+    <!-- Font Family (already in style.css) -->
+</head>
+<body>
+    <header class='app-header'>
+        <div class='container'>
+            <h1 class='logo'>FitSync</h1>
+            <nav>
+                <a href='dashboard.html'>Dashboard</a>
+                <a href='analysis.html' class='active'>Analysis</a>
+                <!-- Corrected: Settings link should not be active here -->
+                <a href='settings.html'>Settings</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class='container page-container'>
+        <div class='page-header'>
+            <h1>Your Progress & Analysis</h1>
+            <p class='subtitle'>Reflect on your journey. Understanding patterns and how you feel can empower your next steps.</p>
+        </div>
+
+        <!-- Workout Trends Section -->
+        <section class='card analysis-section workout-trends'>
+            <h2><i class='fas fa-chart-line icon'></i> Workout Trends & Consistency</h2>
+            <p class='section-description'>Visualizing your activity patterns over the last month.</p>
+            <div class='chart-grid'>
+                <div class='chart-container'>
+                    <img src='images/charts/analysis_frequency_bar.png' alt='Chart: Workout Frequency - Last 4 Weeks'>
+                    <p class='chart-caption'>Workout Frequency - Last 4 Weeks</p>
+                </div>
+                <div class='chart-container'>
+                    <img src='images/charts/analysis_duration_trend.png' alt='Chart: Workout Duration Trends'>
+                    <p class='chart-caption'>Average Workout Duration Trends</p>
+                </div>
+            </div>
+            <div class='insights'>
+                <h3><i class='fas fa-lightbulb icon-insight-title'></i> Key Observations:</h3>
+                <p class='insight'><i class='fas fa-sun icon-insight'></i>You've been most consistent with workouts scheduled in the <strong class='highlight-text'>morning</strong>.</p>
+                <p class='insight'><i class='fas fa-stopwatch icon-insight'></i>You tend to complete <strong class='highlight-text'>shorter (~20-30 min)</strong> workouts more often than longer ones. This aligns with your preference!</p>
+                <p class='insight'><i class='fas fa-calendar-times icon-insight'></i>We noticed a dip in frequency during the week you reported <span class='highlight highlight-context'>high stress</span>. It's okay to adjust during busy times!</p>
+            </div>
+        </section>
+
+        <!-- Connecting Feelings & Fitness Section -->
+        <section class='card analysis-section feelings-fitness'>
+            <h2><i class='fas fa-heart-pulse icon'></i> Connecting Feelings & Fitness</h2>
+            <p class='section-description'>Let's explore how workouts impact your well-being, based on your feedback.</p>
+            <div class='chart-grid'>
+                <div class='chart-container'>
+                    <img src='images/charts/analysis_energy_levels.png' alt='Chart: Reported Energy After Workout Types'>
+                    <p class='chart-caption'>Reported Energy Levels After Different Workout Types</p>
+                </div>
+                <div class='chart-container'>
+                    <img src='images/charts/analysis_mood_trend.png' alt='Chart: Reported Mood vs Workout Completion'>
+                    <p class='chart-caption'>Mood Trends vs. Workout Completion (Last 30 Days)</p>
+                </div>
+            </div>
+            <div class='insights'>
+                <h3><i class='fas fa-lightbulb icon-insight-title'></i> What We're Seeing:</h3>
+                <p class='insight'><i class='fas fa-bolt icon-insight'></i>You often report feeling <strong class='highlight-text'>'more energetic'</strong> after completing <span class='highlight highlight-activity'>strength-focused</span> sessions.</p>
+                <p class='insight'><i class='fas fa-smile icon-insight'></i>Completing workouts, even shorter ones, seems to correlate positively with reporting a <span class='highlight highlight-context'>'Good' or 'Great' mood</span> afterwards.</p>
+            </div>
+        </section>
+
+        <!-- Plan Adaptations Section -->
+        <section class='card analysis-section plan-adaptations'>
+            <h2><i class='fas fa-cogs icon'></i> How Your Plan Adapts (Transparency)</h2>
+            <p class='section-description'>FitSync learns from your feedback. Here are examples of how we've adjusted your plan recently:</p>
+            <ul class='adaptations-list'>
+                <li>
+                    <div class='adaptation-header'>
+                        <i class='fas fa-comment-medical icon-adaptation-reason'></i>
+                        <span>Feedback: <span class='highlight highlight-feedback'>Knee discomfort during lunges</span></span>
+                    </div>
+                    <div class='adaptation-body'>
+                        <i class='fas fa-exchange-alt icon-adaptation-action'></i>
+                        <div>
+                            <strong>Action Taken:</strong> Substituted lunges with glute bridges this week to reduce knee stress while still targeting similar muscles.
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class='adaptation-header'>
+                        <i class='fas fa-battery-quarter icon-adaptation-reason'></i>
+                        <span>Feedback: <span class='highlight highlight-feedback'>'More Tired'</span> after Monday, prefers <span class='highlight highlight-preference'>'lighter workout'</span></span>
+                    </div>
+                    <div class='adaptation-body'>
+                        <i class='fas fa-arrow-down icon-adaptation-action'></i>
+                        <div>
+                            <strong>Action Taken:</strong> Tuesday's suggested plan was adjusted to focus on <span class='highlight highlight-activity'>Gentle Movement & Flexibility</span> instead of moderate cardio.
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class='adaptation-header'>
+                        <i class='fas fa-check-double icon-adaptation-reason'></i>
+                        <span>Progress: Completed all workouts, felt <span class='highlight highlight-feedback'>'Energized'</span></span>
+                    </div>
+                    <div class='adaptation-body'>
+                        <i class='fas fa-arrow-up icon-adaptation-action'></i>
+                        <div>
+                            <strong>Next Step:</strong> Based on this, next week's plan might slightly increase duration or introduce a new exercise, keeping your preferences in mind. We'll check in!
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <p class='adaptation-note'>These adjustments aim to keep your plan effective, safe, and aligned with how you feel.</p>
+        </section>
+
+        <!-- Goal Progress Section -->
+        <section class='card analysis-section goal-progress'>
+            <h2><i class='fas fa-bullseye icon'></i> Progress Towards Your Goal: <span class='highlight-goal'>'Build a Habit'</span></h2>
+            <p class='section-description'>Let's see how you're tracking towards your primary goal.</p>
+            <div class='goal-progress-metrics'>
+                <div class='metric-item'>
+                    <span class='metric-value'>78%</span>
+                    <span class='metric-label'>Consistency Score (30d)</span>
+                    <div class='metric-trend up'><i class='fas fa-arrow-trend-up'></i> Improving</div>
+                </div>
+                <div class='metric-item'>
+                    <span class='metric-value'>4</span>
+                    <span class='metric-label'>Avg. Workouts / Week (4wk)</span>
+                    <div class='metric-trend stable'><i class='fas fa-arrows-rotate'></i> Stable</div>
+                </div>
+                <div class='metric-item'>
+                    <span class='metric-value'>12</span>
+                    <span class='metric-label'>Total Workouts Logged</span>
+                    <div class='metric-trend'>Since Start</div>
+                </div>
+            </div>
+            <div class='insights goal-insight'>
+                <p class='insight'><i class='fas fa-lightbulb icon-insight'></i><strong class='highlight-text'>Keep Going!</strong> Your consistency is trending upwards. Sticking to the schedule, even with shorter or modified workouts on tough days, is building a strong foundation.</p>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section class='card analysis-section achievements'>
+            <h2><i class='fas fa-trophy icon'></i> Recent Milestones & Achievements</h2>
+            <p class='section-description'>Celebrating your progress along the way!</p>
+            <div class='achievements-grid'>
+                <div class='achievement-badge'>
+                    <i class='fas fa-medal achievement-icon'></i>
+                    <span class='achievement-title'>Completed 10 Workouts!</span>
+                    <small class='achievement-date'>Achieved: Nov 5</small>
+                </div>
+                <div class='achievement-badge'>
+                    <i class='fas fa-calendar-check achievement-icon'></i>
+                    <span class='achievement-title'>First Full Week Streak!</span>
+                    <small class='achievement-date'>Achieved: Oct 30</small>
+                </div>
+                <div class='achievement-badge'>
+                    <i class='fas fa-spa achievement-icon'></i>
+                    <span class='achievement-title'>Tried Yoga!</span>
+                    <small class='achievement-date'>Achieved: Oct 26</small>
+                </div>
+                <div class='achievement-badge locked'>
+                    <i class='fas fa-lock achievement-icon'></i>
+                    <span class='achievement-title'>Morning Workout Master</span>
+                    <small class='achievement-date'>Keep going!</small>
+                </div>
+                <div class='achievement-badge locked'>
+                    <i class='fas fa-shoe-prints achievement-icon'></i>
+                    <span class='achievement-title'>50km Walked</span>
+                    <small class='achievement-date'>Log more walks!</small>
+                </div>
+                <div class='achievement-badge locked'>
+                    <i class='fas fa-dumbbell achievement-icon'></i>
+                    <span class='achievement-title'>Strength Session x5</span>
+                    <small class='achievement-date'>Almost there!</small>
+                </div>
+            </div>
+        </section>
+
+        <div class='button-container' style='justify-content: center; margin-top: 2.5rem;'>
+            <a href='dashboard.html' class='button button-secondary'><i class='fas fa-arrow-left'></i> Back to Dashboard</a>
+        </div>
+
+    </main>
+
+    <footer class='app-footer'>
+        <div class='container'>
+            <p>© 2025 FitSync. Keep Moving!</p>
+        </div>
+    </footer>
+
+    
+
+</body>
+</html>

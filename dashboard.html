@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitSync - Dashboard</title>
+    <!-- Link to the consolidated and refined CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Family is loaded via style.css -->
+</head>
+<body>
+    <header class="app-header">
+        <div class="container">
+            <h1 class="logo">FitSync</h1>
+            <nav>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="analysis.html">Analysis</a>
+                <a href="settings.html">Settings</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-container">
+        <!-- Example Static Notification -->
+        <div class="notification-banner info">
+            <i class="fas fa-info-circle"></i>
+            <span>Reminder: Log your workout from yesterday if you haven't already!</span>
+            <button class="close-notification" aria-label="Dismiss notification">×</button>
+        </div>
+
+        <div class="page-header">
+            <h1>Your FitSync Dashboard</h1>
+            <p class="subtitle">Welcome back, <span class="user-name-placeholder">Alex</span>! Let's see how we can support your goals today.</p>
+        </div>
+
+        <!-- Quick Context Check-in -->
+        <section class="card dashboard-section quick-context">
+             <!-- Icon color set via utility class -->
+             <h2><i class="fas fa-cloud-sun icon icon-color-warning"></i> How are you feeling today?</h2>
+             <p class="section-description">A quick check-in helps us fine-tune your experience.</p>
+             <!-- Container with ID for JS targeting -->
+             <div class="context-options" id="context-options-container">
+                 <!-- Buttons with data-value attributes -->
+                 <button class="button button-secondary button-context" data-value="energetic"><i class="fas fa-battery-full"></i> Energetic</button>
+                 <button class="button button-secondary button-context" data-value="average"><i class="fas fa-battery-half"></i> Average</button>
+                 <button class="button button-secondary button-context" data-value="low_energy"><i class="fas fa-battery-quarter"></i> Low Energy</button>
+                 <button class="button button-secondary button-context button-discomfort" data-value="discomfort"><i class="fas fa-notes-medical"></i> Have Discomfort</button>
+                 <!-- This button is excluded from the active state logic -->
+                 <button class="button button-ghost button-context button-small" title="Log specific feelings, soreness, sleep, etc.">
+                    <i class="fas fa-plus-circle"></i> Log Specifics
+                 </button>
+             </div>
+             <!-- Area for immediate feedback with ID -->
+             <div class="context-feedback" id="context-feedback-message" aria-live="polite">
+                 Select how you're feeling.
+             </div>
+             <!-- Hint with ID, hidden by default via CSS -->
+             <small class="context-hint-discomfort" id="discomfort-hint">
+                 Remember to detail ongoing issues in your <a href='settings.html#injuries' title="Go to Health & Wellness Context section">Health Settings</a> for better long-term adaptation.
+             </small>
+             <small class="context-hint">This is optional, but helps tailor suggestions.</small>
+        </section>
+
+        <!-- Today's Plan Section -->
+        <section class="card dashboard-section today-plan">
+            <!-- Icon color set via utility class -->
+            <h2><i class="fas fa-calendar-day icon icon-color-primary"></i> Today's Suggested Plan</h2>
+            <div class="plan-rationale-box">
+                <p><i class="fas fa-info-circle"></i> <strong>Why this suggestion?</strong></p>
+                <ul>
+                    <!-- Highlight classes are styled in style.css -->
+                    <li>Aligned with your primary goal: <span class="highlight highlight-goal-inline">'Build a habit'</span> (from Settings).</li>
+                    <li>Based on your feedback yesterday reporting feeling <span class="highlight highlight-feedback">'tired'</span>.</li>
+                    <li>Reflects your preference for <span class="highlight highlight-preference">'lighter workouts'</span> when energy is low (from Settings).</li>
+                    <li>Focuses on <span class="highlight highlight-activity">recovery and light activity</span> to maintain consistency without overexertion today.</li>
+                </ul>
+            </div>
+            <div class="workout-summary-detailed">
+                <h3>Focus: <span class="highlight highlight-activity">Gentle Movement & Flexibility</span></h3>
+                <div class="summary-details">
+                    <p><i class="far fa-clock"></i> <strong>Duration:</strong> ~25 minutes</p>
+                    <p><i class="fas fa-fire-alt"></i> <strong>Intensity:</strong> Light</p>
+                </div>
+            </div>
+            <div class="plan-actions button-container">
+                <a href="workout.html" class="button button-primary button-large">
+                    <i class="fas fa-play"></i> View Workout & Start
+                </a>
+                <a href="#adjust-options-placeholder" class="button button-secondary" title="Clicking this would ideally show adjustment options">
+                    <i class="fas fa-exchange-alt"></i> Need to Adjust?
+                </a>
+            </div>
+        </section>
+
+        <!-- Progress Overview Section -->
+        <section class="card dashboard-section progress-overview">
+            <!-- Icon color set via utility class -->
+            <h2><i class="fas fa-chart-pie icon icon-color-accent"></i> Recent Progress Snippet</h2>
+            <p class="section-description">A quick look at your recent activity.</p>
+            <div class="progress-metrics">
+                <div class="metric-item">
+                    <span class="metric-label">Workouts This Week</span>
+                    <span class="metric-value">3</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Consistency Score (7d)</span>
+                    <span class="metric-value">78%</span>
+                    <div class="progress-bar-container">
+                        <!-- Inline style for width is REQUIRED here as it's dynamic data -->
+                        <div class="progress-bar" style="width: 78%;" title="78% Consistency"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-container mini-chart justify-center">
+                 <img src="images/charts/dashboard_weekly_consistency.png" alt="Chart: Weekly Activity Consistency" width="600" height="300">
+            </div>
+            <p class="reflection-prompt">How are you feeling about your progress lately?</p>
+            <!-- Centered button container using utility class -->
+            <div class="progress-actions button-container justify-center">
+                <a href="analysis.html" class="button button-secondary">
+                    <i class="fas fa-search-plus"></i> Dive Deeper into Analysis
+                </a>
+            </div>
+        </section>
+
+         <!-- Settings Section Link -->
+         <section class="card dashboard-section settings-link">
+             <!-- Icon color set via utility class -->
+             <h2><i class="fas fa-cog icon icon-color-secondary"></i> Settings & Preferences</h2>
+             <p class="section-description">Need to update your info, goals, or how FitSync adapts?</p>
+             <!-- Centered button container using utility class -->
+             <div class="button-container justify-center">
+                <a href="settings.html" class="button button-secondary">
+                    <i class="fas fa-user-edit"></i> Update Profile & Preferences
+                </a>
+             </div>
+         </section>
+    </main>
+
+    <footer class="app-footer">
+        <div class="container">
+            <p>© 2025 FitSync. Keep Moving!</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Context Buttons and Notification Close -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contextOptionsContainer = document.getElementById('context-options-container');
+            const feedbackMessage = document.getElementById('context-feedback-message');
+            const discomfortHint = document.getElementById('discomfort-hint');
+
+            // Check if the container exists before trying to query buttons inside it
+            if (contextOptionsContainer) {
+                const contextButtons = contextOptionsContainer.querySelectorAll('.button-context:not(.button-small)'); // Exclude 'Log Specifics'
+
+                contextButtons.forEach(button => {
+                    button.addEventListener('click', (event) => {
+                        const clickedButton = event.currentTarget;
+                        const selectedValue = clickedButton.dataset.value;
+                        const selectedText = clickedButton.textContent.trim();
+
+                        // Remove active class from all buttons first
+                        contextButtons.forEach(btn => btn.classList.remove('active'));
+
+                        // Add active class to the clicked button
+                        clickedButton.classList.add('active');
+
+                        // Update feedback message
+                        if (feedbackMessage) {
+                            feedbackMessage.textContent = `Selected: ${selectedText}. We'll keep this in mind!`;
+                        }
+
+                        // Show/hide discomfort hint based ONLY on the 'discomfort' button
+                        if (discomfortHint) {
+                            if (selectedValue === 'discomfort') {
+                                discomfortHint.classList.add('visible');
+                            } else {
+                                discomfortHint.classList.remove('visible');
+                            }
+                        }
+
+                        // In a real app, you'd send 'selectedValue' to a server here
+                        console.log('Context selected:', selectedValue);
+                    });
+                });
+            } // End if contextOptionsContainer exists
+
+            // Handle the close notification button
+            const closeButton = document.querySelector('.close-notification');
+            if (closeButton) {
+                closeButton.addEventListener('click', () => {
+                    // Find the closest parent banner and hide it
+                    const banner = closeButton.closest('.notification-banner');
+                    if (banner) {
+                        banner.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

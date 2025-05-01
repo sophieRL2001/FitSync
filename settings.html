@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitSync - Welcome & Settings</title>
+    <!-- Link to the consolidated and refined CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="container">
+            <h1 class="logo">FitSync</h1>
+            <nav>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="analysis.html">Analysis</a>
+                <a href="settings.html" class="active">Settings</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-container">
+        <div class="page-header">
+            <h1>Welcome to FitSync!</h1>
+            <p class="subtitle">Let's personalize your fitness journey. Your settings help us tailor plans, adapt to your needs, and understand how you feel.</p>
+        </div>
+
+        <!-- Form wrapped in a card -->
+        <form action="dashboard.html" method="get" class="card settings-form">
+
+            <fieldset class="form-section">
+                <!-- Icon color set via utility class -->
+                <legend><i class="fas fa-user icon icon-color-violet"></i> Basic Personal Info</legend>
+                <p class="section-description">This helps us estimate baseline needs. We respect your privacy.</p>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" placeholder="e.g., 30" min="10" max="120" title="Helps estimate general fitness levels and potential considerations.">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" title="May influence some baseline estimations (optional).">
+                            <option value="" disabled selected>Select...</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                            <option value="prefer_not">Prefer not to say</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="height">Height (cm)</label>
+                        <input type="number" id="height" name="height" placeholder="e.g., 175" min="100" max="250" title="Used with weight for general estimations.">
+                    </div>
+                    <div class="form-group">
+                        <label for="weight">Weight (kg)</label>
+                        <input type="number" id="weight" name="weight" placeholder="e.g., 70" min="30" max="300" title="Used with height for general estimations.">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend><i class="fas fa-walking icon icon-color-accent"></i> Lifestyle & Activity</legend>
+                <p class="section-description">How active are you generally outside of planned workouts?</p>
+                 <div class="form-group">
+                    <label for="activity_level">Current Activity Level</label>
+                    <select id="activity_level" name="activity_level" title="Helps gauge your starting point and overall energy expenditure.">
+                        <option value="" disabled selected>Select...</option>
+                        <option value="sedentary">Sedentary (little to no exercise)</option>
+                        <option value="light">Lightly Active (light exercise/sports 1-3 days/week)</option>
+                        <option value="moderate">Moderately Active (moderate exercise/sports 3-5 days/week)</option>
+                        <option value="very">Very Active (hard exercise/sports 6-7 days a week)</option>
+                    </select>
+                 </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend><i class="fas fa-heartbeat icon icon-color-pink"></i> Fitness Preferences</legend>
+                <p class="section-description">What do you enjoy? What fits your life? This helps make your plan sustainable.</p>
+                <div class="form-group">
+                    <label>Preferred Exercise Types (select all that apply)</label>
+                    <!-- Enhanced checkbox group styling is now in style.css -->
+                    <div class="checkbox-group styled-checkbox-group">
+                        <div>
+                            <input type="checkbox" id="pref_cardio" name="prefs" value="cardio">
+                            <label for="pref_cardio"><i class="fas fa-running"></i> Cardio (running, cycling)</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="pref_strength" name="prefs" value="strength">
+                            <label for="pref_strength"><i class="fas fa-dumbbell"></i> Strength Training</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="pref_flexibility" name="prefs" value="flexibility">
+                            <label for="pref_flexibility"><i class="fas fa-spa"></i> Flexibility (yoga, stretching)</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="pref_other" name="prefs" value="other">
+                            <label for="pref_other"><i class="fas fa-question-circle"></i> Other</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="environment">Preferred Environment</label>
+                        <select id="environment" name="environment">
+                            <option value="" disabled selected>Select...</option>
+                            <option value="home">Home</option>
+                            <option value="gym">Gym</option>
+                            <option value="outdoors">Outdoors</option>
+                            <option value="any">Any / No Preference</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Typical Preferred Workout Duration (minutes)</label>
+                        <input type="number" id="duration" name="duration" placeholder="e.g., 30" min="10" max="120" step="5" title="Helps us suggest workouts that fit your schedule.">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <!-- Icon color set via utility class -->
+                <legend><i class="fas fa-notes-medical icon icon-color-danger"></i> Health & Wellness Context</legend>
+                <p class="section-description">Sharing this helps us suggest safe and suitable activities, especially on challenging days. This is key for adaptation.</p>
+                <div class="form-group">
+                    <label for="injuries">Any current injuries, limitations, or areas to be cautious about?</label>
+                    <textarea id="injuries" name="injuries" rows="4" placeholder="e.g., Knee pain when running, limited shoulder mobility, prefer low-impact cardio. Please be specific!" title="Crucial for suggesting safe modifications and avoiding exercises that could cause harm."></textarea>
+                    <small class="form-hint">Being specific helps us suggest effective modifications.</small>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="stress_level">Typical Stress Level</label>
+                        <select id="stress_level" name="stress_level" title="Stress can impact energy and recovery. Knowing this helps us adapt intensity.">
+                            <option value="" disabled selected>Select...</option>
+                            <option value="low">Generally Low</option>
+                            <option value="medium">Often Medium</option>
+                            <option value="high">Frequently High</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                         <label for="adaptation_preference">When feeling low energy or high stress, how should we adapt?</label>
+                        <select id="adaptation_preference" name="adaptation_preference" title="This directly controls how the system adjusts your plan based on your check-ins or feedback.">
+                            <option value="" disabled selected>Select...</option>
+                            <option value="suggest_lighter">Suggest a lighter/shorter workout</option>
+                            <option value="suggest_rest">Suggest a rest/recovery activity (e.g., stretching)</option>
+                            <option value="keep_plan_encourage">Keep plan, add extra encouragement</option>
+                            <option value="ask_each_time">Ask me each time</option>
+                        </select>
+                    </div>
+                </div>
+                 <div class="form-group">
+                     <label for="encouragement">Preferred Encouragement Style</label>
+                    <select id="encouragement" name="encouragement" title="Helps tailor motivational messages and feedback.">
+                        <option value="" disabled selected>Select...</option>
+                        <option value="gentle">Gentle Nudges & Reminders</option>
+                        <option value="direct">Direct & Informative Feedback</option>
+                        <option value="celebratory">Celebratory & Highlighting Wins</option>
+                        <option value="minimal">Minimal / Just the facts</option>
+                    </select>
+                </div>
+            </fieldset>
+
+             <fieldset class="form-section">
+                <!-- Icon color set via utility class -->
+                <legend><i class="fas fa-bullseye icon icon-color-warning"></i> Goals & Scheduling</legend>
+                <p class="section-description">What are you working towards? When can you fit it in?</p>
+                <div class="form-group">
+                    <label for="goals">Primary Fitness Goal</label>
+                    <select id="goals" name="goals">
+                        <option value="" disabled selected>Select...</option>
+                        <option value="get_active">Become more active / Build a habit</option>
+                        <option value="lose_weight">Lose weight</option>
+                        <option value="build_strength">Build strength</option>
+                        <option value="improve_endurance">Improve endurance</option>
+                        <option value="reduce_stress">Reduce stress / Improve well-being</option>
+                        <option value="maintain">Maintain current level</option>
+                        <option value="other">Other (Specify in notes if needed)</option>
+                    </select>
+                    <small class="form-hint">Your goal influences the types and progression of workouts suggested.</small>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="frequency">How many days per week can you realistically commit?</label>
+                        <input type="number" id="frequency" name="frequency" min="1" max="7" placeholder="e.g., 3" title="Helps set achievable consistency targets.">
+                    </div>
+                    <div class="form-group">
+                        <label for="availability">Best times/days for workouts? (Optional)</label>
+                        <input type="text" id="availability" name="availability" placeholder="e.g., Weekday mornings, Sat afternoon" title="Can help tailor reminders and scheduling suggestions.">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label for="checkin_pref">How often for a quick mood/energy check-in?</label>
+                    <select id="checkin_pref" name="checkin_pref" title="Determines how often the dashboard prompts you for context. More frequent check-ins allow for better adaptation.">
+                        <option value="daily">Daily (Recommended for best adaptation)</option>
+                        <option value="workout_days">Only on scheduled workout days</option>
+                        <option value="manual">I'll report manually when needed</option>
+                    </select>
+                 </div>
+            </fieldset>
+
+            <!-- Submit Area -->
+            <div class="button-container form-submit-area">
+                <button type="submit" class="button button-primary button-large">
+                    <i class="fas fa-save"></i> Save Preferences & Go to Dashboard
+                </button>
+                <!-- Optional Reset Button -->
+                <!-- <button type="reset" class="button button-secondary">Reset Form</button> -->
+            </div>
+        </form>
+    </main>
+
+    <footer class="app-footer">
+        <div class="container">
+            <p>© 2025 FitSync. Keep Moving!</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>

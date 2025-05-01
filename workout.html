@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitSync - Today's Workout</title>
+    <!-- Link to the consolidated and refined CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Family is loaded via style.css -->
+</head>
+<body>
+    <header class="app-header">
+        <div class="container">
+            <h1 class="logo">FitSync</h1>
+            <nav>
+                <!-- Corrected nav links for workout page context -->
+                <a href="dashboard.html">Dashboard</a>
+                <a href="analysis.html">Analysis</a>
+                <a href="settings.html">Settings</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-container">
+        <div class="page-header">
+            <h1>Today: <span class="workout-title-highlight">Gentle Movement & Flexibility</span></h1>
+            <p class="subtitle">Focus on smooth movements and listen to your body. Follow the steps below. Remember, you can pause or modify if needed.</p>
+        </div>
+
+        <!-- Workout Steps Section -->
+        <section class="card workout-details">
+            <!-- Icon color set via utility class -->
+            <h2><i class="fas fa-list-check icon icon-color-accent"></i> Workout Steps:</h2>
+            <!-- Ellipsis icon style handled by style.css -->
+            <p class="section-description">Mark each step complete as you go. Use the options button (<i class="fas fa-ellipsis-v"></i>) if you need to adjust a specific step.</p>
+            <ol class="workout-steps-list">
+                <!-- Step item styling is in style.css -->
+                <li class="step-item warm-up" data-step-id="1">
+                    <div class="step-icon-container"><i class="fas fa-fire icon-step"></i></div>
+                    <div class="step-content">
+                        <strong>Warm-up:</strong> Gentle neck rolls, shoulder circles, arm swings.
+                        <span class="step-meta">(~5 min)</span>
+                    </div>
+                    <button class="step-modify-button" aria-label="Options for step 1" title="Modify this step (e.g., swap, log issue) - Prototype">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <button class="step-status-button" aria-label="Mark step 1 as complete">
+                        <i class="far fa-circle icon-incomplete"></i>
+                        <i class="fas fa-check icon-complete"></i>
+                    </button>
+                </li>
+                <li class="step-item exercise" data-step-id="2">
+                    <div class="step-icon-container"><i class="fas fa-cat icon-step"></i></div>
+                    <div class="step-content">
+                        <strong>Cat-Cow Stretch:</strong> Focus on spinal mobility.
+                        <span class="step-meta">(10 reps)</span>
+                    </div>
+                    <button class="step-modify-button" aria-label="Options for step 2" title="Modify this step (e.g., swap, log issue) - Prototype">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                     <button class="step-status-button" aria-label="Mark step 2 as complete">
+                        <i class="far fa-circle icon-incomplete"></i>
+                        <i class="fas fa-check icon-complete"></i>
+                    </button>
+                </li>
+                <li class="step-item exercise" data-step-id="3">
+                     <div class="step-icon-container"><i class="fas fa-child icon-step"></i></div>
+                    <div class="step-content">
+                        <strong>Child's Pose:</strong> Relax and breathe deeply.
+                        <span class="step-meta">(Hold 1 min)</span>
+                    </div>
+                    <button class="step-modify-button" aria-label="Options for step 3" title="Modify this step (e.g., swap, log issue) - Prototype">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                     <button class="step-status-button" aria-label="Mark step 3 as complete">
+                        <i class="far fa-circle icon-incomplete"></i>
+                        <i class="fas fa-check icon-complete"></i>
+                    </button>
+                </li>
+                <li class="step-item exercise" data-step-id="4">
+                    <div class="step-icon-container"><i class="fas fa-person-stretching icon-step"></i></div>
+                    <div class="step-content">
+                        <strong>Seated Forward Fold:</strong> Gentle hamstring stretch.
+                        <span class="step-meta">(Hold 1 min)</span>
+                    </div>
+                    <button class="step-modify-button" aria-label="Options for step 4" title="Modify this step (e.g., swap, log issue) - Prototype">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                     <button class="step-status-button" aria-label="Mark step 4 as complete">
+                        <i class="far fa-circle icon-incomplete"></i>
+                        <i class="fas fa-check icon-complete"></i>
+                    </button>
+                </li>
+                <li class="step-item exercise" data-step-id="5">
+                    <div class="step-icon-container"><i class="fas fa-walking icon-step"></i></div>
+                    <div class="step-content">
+                        <strong>Light Walk:</strong> Indoors or outdoors, comfortable pace.
+                        <span class="step-meta">(10 min)</span>
+                    </div>
+                    <button class="step-modify-button" aria-label="Options for step 5" title="Modify this step (e.g., swap, log issue) - Prototype">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                     <button class="step-status-button" aria-label="Mark step 5 as complete">
+                        <i class="far fa-circle icon-incomplete"></i>
+                        <i class="fas fa-check icon-complete"></i>
+                    </button>
+                </li>
+                <li class="step-item cool-down" data-step-id="6">
+                    <div class="step-icon-container"><i class="fas fa-snowflake icon-step"></i></div>
+                    <div class="step-content">
+                        <strong>Cool-down:</strong> Deep breathing exercises.
+                        <span class="step-meta">(~3 min)</span>
+                    </div>
+                    <button class="step-modify-button" aria-label="Options for step 6" title="Modify this step (e.g., swap, log issue) - Prototype">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                     <button class="step-status-button" aria-label="Mark step 6 as complete">
+                        <i class="far fa-circle icon-incomplete"></i>
+                        <i class="fas fa-check icon-complete"></i>
+                    </button>
+                </li>
+            </ol>
+
+            <!-- Visual Aid Example -->
+            <div class="visual-aid-example">
+                <h3>Visual Guide Example: Cat-Cow Stretch</h3>
+                <img src="images/CatCow.gif" alt="Animation showing Cat-Cow spinal movement" width="575" height="322">
+                <p class="visual-aid-caption">This gentle movement helps improve spinal flexibility and can relieve tension. Focus on coordinating breath with movement.</p>
+            </div>
+        </section>
+
+        <!-- Workout Feedback Section -->
+        <section class="card feedback-section">
+            <!-- Icon color set via utility class -->
+            <h2><i class="fas fa-comment-dots icon icon-color-warning"></i> How Did It Go? Tell Us More!</h2>
+            <p class="section-description">Your detailed feedback is key to making FitSync work better for you. Be honest!</p>
+
+            <form action="dashboard.html" method="get" class="feedback-form">
+
+                <fieldset class="form-section">
+                    <!-- Icon color set via utility class -->
+                    <legend><i class="fas fa-clipboard-check icon icon-color-accent"></i> Completion Status</legend>
+                    <!-- Radio card styling is in style.css -->
+                    <div class="form-group radio-card-group">
+                        <div class="radio-card">
+                            <input type="radio" id="feedback_done" name="feedback_status" value="done" checked>
+                            <label for="feedback_done">
+                                <i class="fas fa-check-circle icon-radio"></i>
+                                <span>Completed as planned</span>
+                            </label>
+                        </div>
+                        <div class="radio-card">
+                            <input type="radio" id="feedback_modified" name="feedback_status" value="modified">
+                            <label for="feedback_modified">
+                                <i class="fas fa-pencil-alt icon-radio"></i>
+                                <span>Completed with modifications</span>
+                            </label>
+                        </div>
+                         <div class="radio-card">
+                            <input type="radio" id="feedback_partial" name="feedback_status" value="partial">
+                            <label for="feedback_partial">
+                                <i class="fas fa-adjust icon-radio"></i>
+                                <span>Partially completed</span>
+                            </label>
+                        </div>
+                        <div class="radio-card">
+                            <input type="radio" id="feedback_skipped" name="feedback_status" value="skipped">
+                            <label for="feedback_skipped">
+                                <i class="fas fa-times-circle icon-radio"></i>
+                                <span>Skipped workout</span>
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <!-- Icon color set via utility class -->
+                    <legend><i class="fas fa-heartbeat icon icon-color-pink"></i> How You Felt</legend>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="feedback_energy">Energy Level After</label>
+                            <select id="feedback_energy" name="feedback_energy">
+                                <option value="" disabled selected>Select...</option>
+                                <option value="energized">More Energized</option>
+                                <option value="same">About the Same</option>
+                                <option value="tired">More Tired</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="feedback_mood">Mood After</label>
+                            <select id="feedback_mood" name="feedback_mood">
+                                <option value="" disabled selected>Select...</option>
+                                <option value="great">Great / Relaxed</option>
+                                <option value="good">Good / Okay</option>
+                                <option value="meh">Meh / No Change</option>
+                                <option value="stressed">Stressed / Worse</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                     <!-- Icon color set via utility class -->
+                     <legend><i class="fas fa-gauge-high icon icon-color-warning"></i> Difficulty & Discomfort</legend>
+                     <div class="form-grid">
+                        <div class="form-group">
+                            <label for="feedback_difficulty">Overall Difficulty</label>
+                            <select id="feedback_difficulty" name="feedback_difficulty">
+                                <option value="" disabled selected>Select...</option>
+                                <option value="too_easy">Too Easy</option>
+                                <option value="just_right">Just Right</option>
+                                <option value="challenging">Challenging (Good)</option>
+                                <option value="too_hard">Too Hard</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="feedback_discomfort_check">Experienced Discomfort?</label>
+                             <select id="feedback_discomfort_check" name="feedback_discomfort_check">
+                                <option value="" disabled selected>Select...</option>
+                                <option value="no">No Discomfort</option>
+                                <option value="yes">Yes, Some Discomfort</option>
+                             </select>
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label for="feedback_discomfort_details">Discomfort Details (if any)</label>
+                        <textarea id="feedback_discomfort_details" name="feedback_discomfort_details" rows="3" placeholder="e.g., Slight knee twinge during walk, back felt stiff during Cat-Cow. Be specific!"></textarea>
+                        <small class="form-hint">Mention specific exercises or body parts if possible.</small>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <!-- Icon color set via utility class -->
+                    <legend><i class="fas fa-pen icon icon-color-violet"></i> Modifications & Notes</legend>
+                    <div class="form-group">
+                        <label for="feedback_notes">Any modifications made, parts skipped, or other notes?</label>
+                        <textarea id="feedback_notes" name="feedback_notes" rows="4" placeholder="e.g., Skipped the walk due to time. Held Child's Pose longer. Felt really good and relaxed afterwards!"></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- Submit Area -->
+                <div class="button-container form-submit-area">
+                    <button type="submit" class="button button-primary button-large">
+                        <i class="fas fa-paper-plane"></i> Save Feedback & Finish
+                    </button>
+                </div>
+                <!-- Final hint styling handled by .feedback-form .form-hint in style.css -->
+                <p class="form-hint">Thanks! Your feedback helps us adapt future plans.</p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <div class="container">
+            <p>© 2025 FitSync. Keep Moving!</p>
+        </div>
+    </footer>
+
+    <!-- The <style> block previously here has been removed. -->
+    <!-- All styles are now in style.css -->
+
+    <!-- Optional JS for step completion toggle -->
+    <script>
+        document.querySelectorAll('.step-status-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const stepItem = button.closest('.step-item');
+                if (stepItem) {
+                    stepItem.classList.toggle('completed');
+                    const isCompleted = stepItem.classList.contains('completed');
+                    const stepNumber = stepItem.dataset.stepId || 'this step';
+                    button.setAttribute('aria-label', isCompleted ? `Mark step ${stepNumber} as incomplete` : `Mark step ${stepNumber} as complete`);
+                }
+            });
+        });
+
+        document.querySelectorAll('.step-modify-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Modification options for this step would appear here (Prototype).');
+            });
+        });
+    </script>
+
+</body>
+</html>
